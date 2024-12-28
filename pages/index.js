@@ -133,16 +133,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden bg-white pt-20">
         {/* Central Animation */}
-        <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 opacity-60 overflow-hidden">
           <DNAAnimation />
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 min-h-[calc(100vh-80px)] flex items-center">
+        <div className="relative z-10 min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto relative z-20">
+            <div className="max-w-4xl mx-auto relative z-20 overflow-hidden">
               <div className="space-y-6 mb-16">
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                   <HeroText>
                     <span className="text-black">Transforming waste</span>
                   </HeroText>
@@ -351,7 +351,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="relative group"
+                className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-50 to-secondary-50 rounded-xl transform group-hover:scale-105 transition-transform duration-300" />
                 <div className="relative p-8">
