@@ -327,7 +327,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-lg md:max-w-none mx-auto">
             {[
               {
                 step: "01",
@@ -424,6 +424,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="space-y-12 max-w-xl mx-auto w-full"
             >
               <h2 className="text-4xl font-bold text-secondary-900 mb-8">Our Impact</h2>
               <div className="space-y-12">
@@ -502,7 +503,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative max-w-xl mx-auto w-full"
             >
               <div className="space-y-8">
                 <div className="text-center">
@@ -512,8 +513,10 @@ export default function Home() {
                     creating a sustainable cycle of collection, processing, and product development.
                   </p>
                 </div>
-                <div className="flex justify-center">
-                  <CircularEconomyAnimation />
+                <div className="flex justify-center w-full overflow-x-hidden">
+                  <div className="w-full max-w-[500px] mx-auto">
+                    <CircularEconomyAnimation />
+                  </div>
                 </div>
                 <div className="bg-primary-50 rounded-xl p-6">
                   <h4 className="font-semibold text-primary-900 mb-2">Key Benefits:</h4>
@@ -558,7 +561,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-12"
+              className="grid md:grid-cols-2 gap-12 max-w-lg md:max-w-none mx-auto"
             >
               {/* Contact Information */}
               <div className="space-y-8">

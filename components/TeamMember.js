@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-export default function TeamMember({ name, role, linkedin, delay = 0 }) {
+export default function TeamMember({ name, role, linkedin, image, delay = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -10,8 +11,18 @@ export default function TeamMember({ name, role, linkedin, delay = 0 }) {
       className="relative group"
     >
       <div className="relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="aspect-square bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
-          <span className="text-4xl">👤</span>
+        <div className="aspect-square bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center relative overflow-hidden rounded-full mx-auto mt-6 w-40 h-40">
+          {image ? (
+            <Image
+              src={`/${image}`}
+              alt={name}
+              fill
+              className="object-cover rounded-full"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <span className="text-4xl">👤</span>
+          )}
         </div>
         <div className="p-4 text-center">
           <h3 className="text-lg font-semibold text-secondary-900">{name}</h3>

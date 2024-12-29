@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function CircularEconomyAnimation() {
-  const radius = 150;
+  const radius = typeof window !== 'undefined' && window.innerWidth < 500 ? 120 : 150;
   const steps = [
     { label: "Collection", icon: "♻️" },
     { label: "Processing", icon: "⚡" },
@@ -11,7 +11,7 @@ export default function CircularEconomyAnimation() {
   ];
 
   return (
-    <div className="relative w-[500px] h-[500px]">
+    <div className="relative w-full aspect-square">
       {/* Rotating circle */}
       <motion.div
         className="absolute inset-0"
@@ -23,7 +23,7 @@ export default function CircularEconomyAnimation() {
         }}
       >
         {/* Circle path */}
-        <svg className="w-full h-full" viewBox="0 0 500 500">
+        <svg className="w-full h-full" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
           <circle
             cx="250"
             cy="250"
@@ -58,10 +58,10 @@ export default function CircularEconomyAnimation() {
               }}
               whileHover={{ scale: 1.2 }}
             >
-              <div className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-xl md:text-2xl">
                 {step.icon}
               </div>
-              <div className="absolute mt-3 text-base font-medium text-secondary-700 whitespace-nowrap left-1/2 -translate-x-1/2">
+              <div className="absolute mt-2 md:mt-3 text-sm md:text-base font-medium text-secondary-700 whitespace-nowrap left-1/2 -translate-x-1/2">
                 {step.label}
               </div>
             </motion.div>

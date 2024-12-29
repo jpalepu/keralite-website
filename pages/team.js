@@ -29,37 +29,43 @@ export default function Team() {
               {
                 name: "Emilia Nappi",
                 role: "CEO",
-                linkedin: "https://www.linkedin.com/in/emilia-nappi"
+                linkedin: "https://www.linkedin.com/in/emilia-nappi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                image: "emilia.jpeg"
               },
               {
                 name: "Aurora Cascioli",
                 role: "Chief Operating Officer",
-                linkedin: "https://www.linkedin.com/in/aurora-cascioli"
+                linkedin: "https://www.linkedin.com/in/aurora-cascioli-54a538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                image: "aurora.jpeg"
               },
               {
                 name: "Vittorio Blasoni",
                 role: "Communication Manager",
-                linkedin: "https://www.linkedin.com/in/vittorio-blasoni"
+                linkedin: "https://www.linkedin.com/in/vittorio-blasoni-282184228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+                image: "vittorio.jpeg"
               },
               {
                 name: "Jithin Kumar Palepu",
                 role: "Technical Lead",
-                linkedin: "https://www.linkedin.com/in/jithin-kumar-palepu"
+                linkedin: "#",
+                image: "jithin.jpeg"
               },
               {
                 name: "Ester Russo",
                 role: "HR Manager",
-                linkedin: "https://www.linkedin.com/in/ester-russo"
+                linkedin: "#"
               },
               {
                 name: "Anna Pace",
                 role: "Communication Manager",
-                linkedin: "https://www.linkedin.com/in/anna-pace"
+                linkedin: "https://www.linkedin.com/in/anna-pace-6346232a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+                image: "anna.jpeg"
               },
               {
                 name: "Marina Teodori",
                 role: "Chief Sustainability Officer",
-                linkedin: "https://www.linkedin.com/in/marina-teodori"
+                linkedin: "https://www.linkedin.com/in/marina-teodori?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+                image: "marina.jpeg"
               }
             ].map((member, index) => (
               <TeamMember
@@ -67,6 +73,7 @@ export default function Team() {
                 name={member.name}
                 role={member.role}
                 linkedin={member.linkedin}
+                image={member.image}
                 delay={index * 0.1}
               />
             ))}
