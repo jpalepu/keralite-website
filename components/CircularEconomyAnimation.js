@@ -1,7 +1,37 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function CircularEconomyAnimation() {
-  const radius = typeof window !== 'undefined' && window.innerWidth < 500 ? 120 : 150;
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    
+    // Set initial width
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Adjust radius based on screen size
+  const getRadius = () => {
+    if (screenWidth < 380) return 100;
+    if (screenWidth < 500) return 120;
+    return 150;
+  };
+
+  const radius = getRadius();
+  
+  // Adjust icon size based on screen size
+  const getIconSize = () => {
+    if (screenWidth < 380) return 'w-8 h-8 text-base';
+    if (screenWidth < 500) return 'w-10 h-10 text-lg';
+    return 'w-16 h-16 text-2xl';
+  };
+
   const steps = [
     { label: "Collection", icon: "♻️" },
     { label: "Processing", icon: "⚡" },
@@ -12,7 +42,6 @@ export default function CircularEconomyAnimation() {
 
   return (
     <div className="relative w-full aspect-square">
-      {/* Rotating circle */}
       <motion.div
         className="absolute inset-0"
         animate={{ rotate: 360 }}
@@ -22,7 +51,6 @@ export default function CircularEconomyAnimation() {
           ease: "linear"
         }}
       >
-        {/* Circle path */}
         <svg className="w-full h-full" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
           <circle
             cx="250"
@@ -41,7 +69,6 @@ export default function CircularEconomyAnimation() {
           </defs>
         </svg>
 
-        {/* Steps around circle */}
         {steps.map((step, i) => {
           const angle = (i * 360) / steps.length;
           const x = 250 + radius * Math.cos((angle - 90) * (Math.PI / 180));
@@ -56,12 +83,14 @@ export default function CircularEconomyAnimation() {
                 top: y,
                 transform: 'translate(-50%, -50%)'
               }}
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.1 }}
             >
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-xl md:text-2xl">
+              <div className={`${getIconSize()} rounded-full bg-white shadow-lg flex items-center justify-center`}>
                 {step.icon}
               </div>
-              <div className="absolute mt-2 md:mt-3 text-sm md:text-base font-medium text-secondary-700 whitespace-nowrap left-1/2 -translate-x-1/2">
+              <div className={`absolute mt-1 md:mt-3 text-xs md:text-base font-medium text-secondary-700 whitespace-nowrap left-1/2 -translate-x-1/2 ${
+                screenWidth < 380 ? 'max-w-[80px] text-center' : ''
+              }`}>
                 {step.label}
               </div>
             </motion.div>
