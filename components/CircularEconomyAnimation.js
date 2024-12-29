@@ -3,19 +3,10 @@ import { useState, useEffect } from 'react';
 
 export default function CircularEconomyAnimation() {
   const [screenWidth, setScreenWidth] = useState(0);
-  const [containerSize, setContainerSize] = useState(500);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      // Adjust container size based on screen width
-      if (window.innerWidth < 380) {
-        setContainerSize(300);
-      } else if (window.innerWidth < 500) {
-        setContainerSize(400);
-      } else {
-        setContainerSize(500);
-      }
     };
     
     handleResize();
@@ -23,9 +14,15 @@ export default function CircularEconomyAnimation() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Adjust radius based on container size
+  // Fixed container size and center point
+  const containerSize = 500;
+  const center = containerSize / 2;
+  
+  // Calculate radius based on screen size
   const getRadius = () => {
-    return containerSize * 0.3; // 30% of container size
+    if (screenWidth < 380) return 110;
+    if (screenWidth < 500) return 130;
+    return 150;
   };
 
   const radius = getRadius();
@@ -45,8 +42,6 @@ export default function CircularEconomyAnimation() {
     { label: "Distribution", icon: "🔄" }
   ];
 
-  const center = containerSize / 2;
-
   return (
     <div className="relative w-full aspect-square">
       <motion.div
@@ -58,6 +53,7 @@ export default function CircularEconomyAnimation() {
           ease: "linear"
         }}
       >
+        {/* SVG Circle */}
         <svg 
           className="w-full h-full" 
           viewBox={`0 0 ${containerSize} ${containerSize}`} 
@@ -69,7 +65,7 @@ export default function CircularEconomyAnimation() {
             r={radius}
             fill="none"
             stroke="url(#circleGradient)"
-            strokeWidth={containerSize * 0.006} // Responsive stroke width
+            strokeWidth="3"
             strokeDasharray="4 4"
           />
           <defs>
@@ -80,43 +76,50 @@ export default function CircularEconomyAnimation() {
           </defs>
         </svg>
 
-        {steps.map((step, i) => {
-          const angle = (i * 360) / steps.length;
-          const radian = (angle - 90) * (Math.PI / 180);
-          const x = center + radius * Math.cos(radian);
-          const y = center + radius * Math.sin(radian);
+        {/* Icons */}
+        <div className="absolute inset-0">
+          {steps.map((step, i) => {
+            const angle = (i * 360) / steps.length;
+            const radian = (angle - 90) * (Math.PI / 180);
+            
+            // Calculate position relative to the circle
+            const x = center + radius * Math.cos(radian);
+            const y = center + radius * Math.sin(radian);
 
-          return (
-            <motion.div
-              key={i}
-              className="absolute"
-              style={{
-                left: `${(x / containerSize) * 100}%`,
-                top: `${(y / containerSize) * 100}%`,
-                transform: 'translate(-50%, -50%)'
-              }}
-              whileHover={{ scale: 1.1 }}
-            >
-              <div className={`${getIconSize()} rounded-full bg-white shadow-lg flex items-center justify-center`}>
-                {step.icon}
-              </div>
-              <div className={`
-                absolute 
-                mt-1 md:mt-3 
-                text-xs md:text-base 
-                font-medium 
-                text-secondary-700 
-                whitespace-nowrap 
-                left-1/2 
-                -translate-x-1/2
-                ${screenWidth < 380 ? 'max-w-[60px] text-center text-[10px]' : ''}
-                ${screenWidth < 500 ? 'max-w-[80px] text-center text-xs' : ''}
-              `}>
-                {step.label}
-              </div>
-            </motion.div>
-          );
-        })}
+            return (
+              <motion.div
+                key={i}
+                className="absolute"
+                style={{
+                  left: `${(x / containerSize) * 100}%`,
+                  top: `${(y / containerSize) * 100}%`,
+                  transform: 'translate(-50%, -50%)',
+                  width: screenWidth < 380 ? '32px' : screenWidth < 500 ? '40px' : '64px',
+                  height: screenWidth < 380 ? '32px' : screenWidth < 500 ? '40px' : '64px',
+                }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className={`${getIconSize()} rounded-full bg-white shadow-lg flex items-center justify-center`}>
+                  {step.icon}
+                </div>
+                <div className={`
+                  absolute 
+                  mt-1 md:mt-2
+                  text-xs md:text-sm
+                  font-medium 
+                  text-secondary-700 
+                  whitespace-nowrap 
+                  left-1/2 
+                  -translate-x-1/2
+                  ${screenWidth < 380 ? 'text-[10px] max-w-[50px]' : ''}
+                  ${screenWidth < 500 ? 'text-xs max-w-[70px]' : ''}
+                `}>
+                  {step.label}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </motion.div>
     </div>
   );
