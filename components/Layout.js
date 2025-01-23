@@ -1,6 +1,5 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
-import CookieConsent from './CookieConsent';
 
 export default function Layout({ children }) {
   const navigation = [
@@ -15,7 +14,6 @@ export default function Layout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
-      <CookieConsent />
     </>
   );
 } 

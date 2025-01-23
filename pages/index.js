@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 import DNAAnimation from '../components/DNAAnimation';
 import CircularEconomyAnimation from '../components/CircularEconomyAnimation';
 import TeamMember from '../components/TeamMember';
+import Image from 'next/image';
 
 const KeratingHelix = () => {
   const particles = Array.from({ length: 60 });
@@ -144,14 +145,10 @@ export default function Home() {
               <div className="space-y-6 mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                   <HeroText>
-                    <span className="text-black">Transforming waste</span>
-                  </HeroText>
-                  <HeroText delay={0.1}>
-                    <span className="text-black">
-                      into{" "}
+                    <span className="text-black">From Waste 
                       <span className="animate-gradient-text bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 
-                                     bg-[size:400%] bg-clip-text text-transparent">
-                        Innovation.
+                                     bg-[size:400%] bg-clip-text text-transparent ml-2">
+                        to Beauty
                       </span>
                     </span>
                   </HeroText>
@@ -162,9 +159,9 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="mt-8 text-xl md:text-2xl text-secondary-600 max-w-3xl"
                 >
-                  Revolutionizing the keratin industry through sustainable extraction methods. 
-                  Our innovative technology transforms waste hair into valuable biomaterials, 
-                  paving the way for a circular bioeconomy.
+                  Transforming Hair into High-Value Solutions for a Sustainable Cosmetic Industry. 
+                  With our groundbreaking technology, we revolutionise sustainable extraction processes, 
+                  turning discarded hair into biomaterials that support circular economy
                 </motion.p>
               </div>
             </div>
@@ -219,9 +216,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-secondary-900">Our Mission</h3>
                 <div className="prose prose-lg text-secondary-600">
                   <p>
-                    At Keralight, we are revolutionizing the cosmetics industry through sustainable 
-                    innovation. Our mission is to transform waste hair into valuable biomaterials, 
-                    creating a circular economy that benefits both the environment and society.
+                    Our mission is to drive sustainability and innovation in the cosmetic industry 
+                    by specializing in the eco-friendly extraction of keratin from hair. We transform 
+                    this valuable resource into advanced hydrogel products, fostering a circular 
+                    bioeconomy and redefining industry standards.
                   </p>
                 </div>
               </motion.div>
@@ -240,17 +238,17 @@ export default function Home() {
                   },
                   {
                     title: "Impact",
-                    description: "Processing 5,000+ tonnes annually",
+                    description: "Addressing 5,000+ tonnes of hair waste produced annually in Italy through innovative extraction processes",
                     icon: "♻️"
                   },
                   {
                     title: "Collaboration",
-                    description: "Building industry partnerships",
+                    description: "Creating strong partnerships to revolutionize sustainability in the cosmetic industry",
                     icon: "🤝"
                   },
                   {
                     title: "Research",
-                    description: "Advancing material science",
+                    description: "Advancing bio-based materials through science and sustainable innovation",
                     icon: "🧪"
                   }
                 ].map((item, index) => (
@@ -260,7 +258,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-secondary-50 p-6 rounded-xl hover:shadow-md transition-shadow"
+                    className="bg-secondary-50 p-6 rounded-xl hover:shadow-md transition-shadow flex flex-col h-full"
                   >
                     <span className="text-2xl mb-3 block">{item.icon}</span>
                     <h4 className="font-semibold text-secondary-900 mb-2">{item.title}</h4>
@@ -281,14 +279,23 @@ export default function Home() {
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold text-secondary-900">Our Vision</h3>
                   <div className="space-y-4">
-                    {[2024, 2025, 2026].map((year, index) => (
-                      <div key={year} className="flex items-start gap-4">
-                        <span className="text-sm font-semibold text-primary-600">{year}</span>
-                        <p className="text-secondary-600">
-                          {index === 0 && "Establish production capacity"}
-                          {index === 1 && "Scale operations across Italy"}
-                          {index === 2 && "Expand internationally"}
-                        </p>
+                    {[
+                      { 
+                        year: 2025, 
+                        text: "Launching our StartUp, finalizing keratin extraction method and partnering with local hairdressers" 
+                      },
+                      { 
+                        year: 2026, 
+                        text: "Expanding impact: Scaling operations across Italy and exploring applications in agriculture." 
+                      },
+                      { 
+                        year: 2027, 
+                        text: "Leading sustainability: Entering European markets and inspiring innovation in waste management." 
+                      }
+                    ].map((milestone, index) => (
+                      <div key={milestone.year} className="flex items-start gap-4">
+                        <span className="text-sm font-semibold text-primary-600">{milestone.year}</span>
+                        <p className="text-secondary-600">{milestone.text}</p>
                       </div>
                     ))}
                   </div>
@@ -330,213 +337,316 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-lg md:max-w-none mx-auto">
             {[
               {
-                step: "01",
-                title: "Collection & Processing",
-                description: "Sustainable collection and processing of waste hair materials"
+                title: "Collection",
+                description: "We partner with local hairdressers to collect hair through dedicated bins and provide educational materials to highlight its value. Participating salons are featured on our website as sustainability champions",
+                icon: "♻️",
+                bgColor: "bg-gradient-to-br from-primary-50 to-primary-100",
+                iconBg: "bg-primary-100",
+                hoverBg: "hover:bg-primary-50"
               },
               {
-                step: "02",
                 title: "Keratin Extraction",
-                description: "Advanced extraction techniques to obtain pure keratin"
+                description: "We extract keratin using sustainable solvents, setting new standards for eco-friendly innovation and ensuring a minimal environmental footprint",
+                icon: "⚡",
+                bgColor: "bg-gradient-to-br from-secondary-50 to-secondary-100",
+                iconBg: "bg-secondary-100",
+                hoverBg: "hover:bg-secondary-50"
               },
               {
-                step: "03",
                 title: "Hydrogel Formation",
-                description: "Transformation into innovative hydrogel products"
+                description: "The true innovation lies in keratin's transformation into hydrogel—a versatile product with endless possibilities, from water purification to cosmetic applications, reshaping industries",
+                icon: "💡",
+                bgColor: "bg-gradient-to-br from-accent-50 to-accent-100",
+                iconBg: "bg-accent-100",
+                hoverBg: "hover:bg-accent-50"
               }
             ].map((process, index) => (
               <motion.div
-                key={index}
+                key={process.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="relative"
+                className={`${process.bgColor} p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full ${process.hoverBg}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-primary-50 to-secondary-50 rounded-xl transform group-hover:scale-105 transition-transform duration-300" />
-                <div className="relative p-8">
-                  <span className="text-6xl font-bold text-primary-200">{process.step}</span>
-                  <h3 className="text-xl font-semibold text-secondary-900 mt-4 mb-2">{process.title}</h3>
-                  <p className="text-secondary-600">{process.description}</p>
+                <div 
+                  className={`w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl ${process.iconBg} rounded-full shadow-sm`}
+                >
+                  {process.icon}
                 </div>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3 text-center">{process.title}</h3>
+                <p className="text-secondary-600 flex-grow">{process.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section id="sustainability" className="py-32 bg-gradient-to-b from-secondary-50 to-white">
+      {/* Sustainability Section */}
+      <section id="sustainability" 
+        className="py-32" 
+        style={{ backgroundColor: '#BFE6FE' }}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Sustainable Development Goals</h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Our commitment to sustainability aligns with UN Sustainable Development Goals
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-center"
+              style={{ color: '#004AAD' }}
+            >
+              Sustainability: our mission
+            </h2>
+            <p 
+              className="text-xl leading-relaxed text-center"
+              style={{ color: '#004AAD' }}
+            >
+              Every small action is a step toward great change. In Keralight Solutions, we start by transforming waste into a valuable resource, to inspire and promote sustainable practices for a better future for everyone.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {[
-              {
-                sdg: "SDG 3",
-                title: "Good Health and Well-being",
-                description: "Promoting sustainable cosmetic solutions that ensure product safety and human well-being",
-                color: "from-green-400 to-green-600"
-              },
-              {
-                sdg: "SDG 12",
-                title: "Responsible Consumption and Production",
-                description: "Transforming waste hair into valuable resources, promoting circular economy practices",
-                color: "from-amber-400 to-amber-600"
-              },
-              {
-                sdg: "SDG 13",
-                title: "Climate Action",
-                description: "Reducing environmental impact through sustainable extraction processes and waste reduction",
-                color: "from-blue-400 to-blue-600"
-              }
-            ].map((sdg, index) => (
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center"
+              style={{ color: '#004AAD' }}
+            >
+              Our sustainability pillars
+            </h3>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-32">
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative group rounded-xl overflow-hidden"
+                className="bg-white/80 rounded-2xl p-8 shadow-lg"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${sdg.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
-                <div className="relative p-8">
-                  <div className="text-2xl font-bold text-secondary-900 mb-4">{sdg.sdg}</div>
-                  <h3 className="text-xl font-semibold text-secondary-800 mb-4">{sdg.title}</h3>
-                  <p className="text-secondary-600">{sdg.description}</p>
-                </div>
+                <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
+                  1. Circular economy
+                </h4>
+                <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
+                  Every year, tons of hair end up in landfills. We transform what is considered waste into valuable resources by producing high-quality keratin and hydrogels. Through a circular approach, we give new life to materials that would otherwise be discarded.
+                </p>
               </motion.div>
-            ))}
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-12 max-w-xl mx-auto w-full"
-            >
-              <h2 className="text-4xl font-bold text-secondary-900 mb-8">Our Impact</h2>
-              <div className="space-y-12">
-                {[
-                  {
-                    icon: (
-                      <svg className="w-12 h-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" 
-                        />
-                      </svg>
-                    ),
-                    title: "Environmental Impact",
-                    stat: "5,329",
-                    unit: "tonnes",
-                    label: "Waste Reduction",
-                    description: "Potential reduction of hair waste in Italy through our sustainable processing methods."
-                  },
-                  {
-                    icon: (
-                      <svg className="w-12 h-12 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" 
-                        />
-                      </svg>
-                    ),
-                    title: "Social Impact",
-                    stat: "99%",
-                    label: "Population Reach",
-                    description: "Raising awareness through our network of hairdressers, reaching nearly the entire population."
-                  },
-                  {
-                    icon: (
-                      <svg className="w-12 h-12 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-                        />
-                      </svg>
-                    ),
-                    title: "Economic Impact",
-                    stat: "100%",
-                    label: "Circular Economy",
-                    description: "Creating an environmentally and socially conscious business model prioritizing waste material utilization."
-                  }
-                ].map((impact, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                    className="flex items-start p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="flex-1">
-                      <div className="flex items-center mb-4">
-                        <div className="mr-4 p-2 bg-primary-50 rounded-lg">
-                          {impact.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-secondary-900">{impact.title}</h3>
-                          <div className="flex items-baseline mt-1">
-                            <span className="text-3xl font-bold text-primary-600">{impact.stat}</span>
-                            {impact.unit && <span className="ml-1 text-xl text-primary-600">{impact.unit}</span>}
-                          </div>
-                          <p className="text-sm font-medium text-secondary-600">{impact.label}</p>
-                        </div>
-                      </div>
-                      <p className="text-secondary-700 leading-relaxed">{impact.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/80 rounded-2xl p-8 shadow-lg"
+              >
+                <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
+                  2. Environmental impact
+                </h4>
+                <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
+                  We reduce pollution and waste through sustainable production processes. Every gram of hair we recover means less waste and fewer emissions, contributing to the fight against climate change.
+                </p>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative max-w-xl mx-auto w-full"
-            >
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-secondary-900 mb-4">Circular Economy Model</h3>
-                  <p className="text-secondary-600 max-w-md mx-auto">
-                    Our innovative approach transforms waste hair into valuable resources, 
-                    creating a sustainable cycle of collection, processing, and product development.
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/80 rounded-2xl p-8 shadow-lg"
+              >
+                <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
+                  3. Innovation
+                </h4>
+                <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
+                  Through advanced technologies, we develop safe and innovative solutions that improve people's quality of life. Our keratin and hydrogels support health and well-being while respecting the planet.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* SDG Section */}
+            <div className="mt-32">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center"
+                style={{ color: '#004AAD' }}
+              >
+                Sustainable Development Goals
+              </h3>
+              <p className="text-xl text-center mb-16"
+                style={{ color: '#004AAD' }}
+              >
+                Our commitment to sustainability aligns with UN Sustainable Development Goals
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg3.png"
+                    alt="SDG 3"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Human carginogenic toxicity by 99,7%
                   </p>
-                </div>
-                <div className="flex justify-center w-full overflow-x-hidden">
-                  <div className="w-full max-w-[500px] mx-auto">
-                    <CircularEconomyAnimation />
-                  </div>
-                </div>
-                <div className="bg-primary-50 rounded-xl p-6">
-                  <h4 className="font-semibold text-primary-900 mb-2">Key Benefits:</h4>
-                  <ul className="space-y-2 text-primary-700">
-                    <li className="flex items-center">
-                      <span className="mr-2">🌱</span>
-                      Zero waste production through complete material utilization
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-2">💪</span>
-                      Sustainable industry practices and responsible consumption
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-2">🤝</span>
-                      Community engagement through hairdresser network
-                    </li>
-                  </ul>
-                </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg15.png"
+                    alt="SDG 15"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Stratospheric ozone depletion by 99,6%
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg6.png"
+                    alt="SDG 6"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Water consumption by 30,3% and Freshwater Eutrophication by 78,7%
+                  </p>
+                </motion.div>
               </div>
-            </motion.div>
+
+              {/* Second row of SDGs */}
+              <div className="grid md:grid-cols-3 gap-8 mt-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg12.png"
+                    alt="SDG 12"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    We promote a circular economy by turning hairdressers' waste into valuable resources, reducing refuses, and encouraging responsible consumption
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg11.png"
+                    alt="SDG 11"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    We work to reduce waste and pollution, contributing to the creation of cleaner, more resilient communities through sustainable practices and circular innovation
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg17.png"
+                    alt="SDG 17"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Partnerships with eco conscious hairdressers and increase the visibility of our hairdressers as champions of sustainability
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Third row of SDGs */}
+              <div className="grid md:grid-cols-3 gap-8 mt-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg13.png"
+                    alt="SDG 13"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Our processes minimize waste and emissions, contributing to the fight against climate change and fostering a greener future
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg5.png"
+                    alt="SDG 5"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Gender equality: 75% female members in our team and advisory board
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg text-center"
+                >
+                  <Image
+                    src="/sdg8.png"
+                    alt="SDG 8"
+                    width={200}
+                    height={200}
+                    className="mx-auto mb-4"
+                  />
+                  <p className="text-lg font-semibold" style={{ color: '#004AAD' }}>
+                    Transparency is our core value
+                  </p>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -550,9 +660,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Get in Touch</h2>
+            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Join Our Network</h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Interested in our sustainable solutions? We'd love to hear from you.
+              Are you a hairdresser passionate about sustainability? Or a company eager to collaborate on innovative solutions? Join our mission! Connect with us to become part of our growing network and lead the way in eco-conscious practices. Let's shape the future together!
             </p>
           </motion.div>
 
@@ -579,8 +689,8 @@ export default function Home() {
                     </svg>
                     <div>
                       <p className="font-medium text-secondary-900">Email</p>
-                      <a href="mailto:info@keralight.com" className="text-primary-600 hover:text-primary-700">
-                        info@keralight.com
+                      <a href="mailto:keralightsolutions@gmail.com" className="text-primary-600 hover:text-primary-700">
+                        keralightsolutions@gmail.com
                       </a>
                     </div>
                   </div>

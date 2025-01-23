@@ -63,11 +63,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="relative">
             <Image
-              src="/logo.png"
+              src="/logo2.png"
               alt="Keralight Logo"
-              width={150}
-              height={50}
-              className="h-12 w-auto"
+              width={180}
+              height={60}
+              className="h-16 w-auto"
               priority
             />
           </Link>

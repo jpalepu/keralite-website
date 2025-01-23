@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="col-span-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Keralight Logo"
-                width={170}
-                height={55}
+                width={200}
+                height={65}
                 className="h-14 w-auto"
               />
             </Link>
@@ -24,15 +24,15 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-secondary-900 mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#about" className="text-secondary-600 hover:text-primary-600">About Us</a></li>
-              <li><a href="#products" className="text-secondary-600 hover:text-primary-600">Products</a></li>
+              <li><a href="#process" className="text-secondary-600 hover:text-primary-600">Process</a></li>
               <li><a href="#contact" className="text-secondary-600 hover:text-primary-600">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-secondary-900 mb-4">Contact Us</h4>
             <p className="text-secondary-600">
-              Email: info@keralight.com<br />
-              Phone: (555) 123-4567
+              Email: keralightsolutions@gmail.com<br />
+              Location: Rome, Italy
             </p>
           </div>
         </div>

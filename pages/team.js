@@ -40,7 +40,7 @@ export default function Team() {
               },
               {
                 name: "Vittorio Blasoni",
-                role: "Communication Manager",
+                role: "CFO",
                 linkedin: "https://www.linkedin.com/in/vittorio-blasoni-282184228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
                 image: "vittorio.jpeg"
               },
