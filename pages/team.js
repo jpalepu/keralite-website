@@ -6,7 +6,7 @@ export default function Team() {
   return (
     <div className="min-h-screen bg-white">
       <Head>
-        <title>Our Team - Keralight</title>
+        <title>Il Nostro Team - Keralight</title>
         <meta name="description" content="Meet the innovative minds behind Keralight's sustainable technology" />
       </Head>
 
@@ -18,9 +18,9 @@ export default function Team() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">Our Team</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">Il Nostro Team</h1>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Meet the innovative minds behind our sustainable technology
+              Incontra le menti innovative dietro la nostra tecnologia sostenibile
             </p>
           </motion.div>
 
@@ -34,7 +34,7 @@ export default function Team() {
               },
               {
                 name: "Aurora Cascioli",
-                role: "Chief Operating Officer",
+                role: "Direttore Operativo",
                 linkedin: "https://www.linkedin.com/in/aurora-cascioli-54a538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 image: "aurora.jpeg"
               },
@@ -46,24 +46,24 @@ export default function Team() {
               },
               {
                 name: "Jithin Kumar Palepu",
-                role: "Technical Lead",
+                role: "Responsabile Tecnico",
                 linkedin: "#",
                 image: "jithin.jpeg"
               },
               {
                 name: "Ester Russo",
-                role: "HR Manager",
+                role: "Responsabile Risorse Umane",
                 linkedin: "#"
               },
               {
                 name: "Anna Pace",
-                role: "Communication Manager",
+                role: "Responsabile Comunicazione",
                 linkedin: "https://www.linkedin.com/in/anna-pace-6346232a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
                 image: "anna.jpeg"
               },
               {
                 name: "Marina Teodori",
-                role: "Chief Sustainability Officer",
+                role: "Responsabile Sostenibilità",
                 linkedin: "https://www.linkedin.com/in/marina-teodori?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
                 image: "marina.jpeg"
               }

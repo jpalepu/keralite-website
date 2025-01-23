@@ -145,10 +145,10 @@ export default function Home() {
               <div className="space-y-6 mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                   <HeroText>
-                    <span className="text-black">From Waste 
+                    <span className="text-black">Dai Rifiuti 
                       <span className="animate-gradient-text bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 
                                      bg-[size:400%] bg-clip-text text-transparent ml-2">
-                        to Beauty
+                        alla Bellezza
                       </span>
                     </span>
                   </HeroText>
@@ -159,9 +159,9 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="mt-8 text-xl md:text-2xl text-secondary-600 max-w-3xl"
                 >
-                  Transforming Hair into High-Value Solutions for a Sustainable Cosmetic Industry. 
-                  With our groundbreaking technology, we revolutionise sustainable extraction processes, 
-                  turning discarded hair into biomaterials that support circular economy
+                  Trasformiamo i capelli in soluzioni di alto valore per un'industria cosmetica sostenibile. 
+                  Con la nostra tecnologia innovativa, rivoluzionamo i processi di estrazione sostenibile, 
+                  trasformando i capelli di scarto in biomateriali che supportano l'economia circolare
                 </motion.p>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-4xl font-bold text-secondary-900 text-center"
             >
-              About Us
+              Chi Siamo
             </motion.h2>
           </div>
 
@@ -213,13 +213,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <h3 className="text-2xl font-bold text-secondary-900">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-secondary-900">La Nostra Missione</h3>
                 <div className="prose prose-lg text-secondary-600">
                   <p>
-                    Our mission is to drive sustainability and innovation in the cosmetic industry 
-                    by specializing in the eco-friendly extraction of keratin from hair. We transform 
-                    this valuable resource into advanced hydrogel products, fostering a circular 
-                    bioeconomy and redefining industry standards.
+                    La nostra missione è guidare la sostenibilità e l'innovazione nell'industria 
+                    cosmetica specializzandoci nell'estrazione eco-sostenibile della cheratina dai 
+                    capelli. Trasformiamo questa preziosa risorsa in prodotti idrogel avanzati, 
+                    promuovendo una bioeconomia circolare e ridefinendo gli standard del settore.
                   </p>
                 </div>
               </motion.div>
@@ -232,23 +232,23 @@ export default function Home() {
               >
                 {[
                   {
-                    title: "Innovation",
-                    description: "Developing sustainable extraction methods",
+                    title: "Innovazione",
+                    description: "Sviluppo di metodi di estrazione sostenibili",
                     icon: "🔬"
                   },
                   {
-                    title: "Impact",
-                    description: "Addressing 5,000+ tonnes of hair waste produced annually in Italy through innovative extraction processes",
+                    title: "Impatto",
+                    description: "Gestione di oltre 5.000 tonnellate di rifiuti di capelli prodotti annualmente in Italia attraverso processi di estrazione innovativi",
                     icon: "♻️"
                   },
                   {
-                    title: "Collaboration",
-                    description: "Creating strong partnerships to revolutionize sustainability in the cosmetic industry",
+                    title: "Collaborazione",
+                    description: "Creazione di partnership forti per rivoluzionare la sostenibilità nell'industria cosmetica",
                     icon: "🤝"
                   },
                   {
-                    title: "Research",
-                    description: "Advancing bio-based materials through science and sustainable innovation",
+                    title: "Ricerca",
+                    description: "Avanzamento dei materiali bio-based attraverso scienza e innovazione sostenibile",
                     icon: "🧪"
                   }
                 ].map((item, index) => (
@@ -277,20 +277,20 @@ export default function Home() {
                 className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-2xl"
               >
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary-900">Our Vision</h3>
+                  <h3 className="text-2xl font-bold text-secondary-900">La Nostra Visione</h3>
                   <div className="space-y-4">
                     {[
                       { 
                         year: 2025, 
-                        text: "Launching our StartUp, finalizing keratin extraction method and partnering with local hairdressers" 
+                        text: "Lancio della nostra StartUp, finalizzazione del metodo di estrazione della cheratina e partnership con parrucchieri locali" 
                       },
                       { 
                         year: 2026, 
-                        text: "Expanding impact: Scaling operations across Italy and exploring applications in agriculture." 
+                        text: "Espansione dell'impatto: Ampliamento delle operazioni in tutta Italia ed esplorazione di applicazioni in agricoltura." 
                       },
                       { 
                         year: 2027, 
-                        text: "Leading sustainability: Entering European markets and inspiring innovation in waste management." 
+                        text: "Leadership nella sostenibilità: Ingresso nei mercati europei e ispirazione all'innovazione nella gestione dei rifiuti." 
                       }
                     ].map((milestone, index) => (
                       <div key={milestone.year} className="flex items-start gap-4">
@@ -328,33 +328,33 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Our Process</h2>
+            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Il Nostro Processo</h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Transforming waste into sustainable solutions through innovative technology
+              Trasformiamo i rifiuti in soluzioni sostenibili attraverso tecnologie innovative
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-lg md:max-w-none mx-auto">
             {[
               {
-                title: "Collection",
-                description: "We partner with local hairdressers to collect hair through dedicated bins and provide educational materials to highlight its value. Participating salons are featured on our website as sustainability champions",
+                title: "Raccolta",
+                description: "Collaboriamo con i parrucchieri locali per raccogliere i capelli attraverso contenitori dedicati e forniamo materiale educativo per evidenziarne il valore. I saloni partecipanti sono presentati sul nostro sito web come campioni di sostenibilità",
                 icon: "♻️",
                 bgColor: "bg-gradient-to-br from-primary-50 to-primary-100",
                 iconBg: "bg-primary-100",
                 hoverBg: "hover:bg-primary-50"
               },
               {
-                title: "Keratin Extraction",
-                description: "We extract keratin using sustainable solvents, setting new standards for eco-friendly innovation and ensuring a minimal environmental footprint",
+                title: "Estrazione della Cheratina",
+                description: "Estraiamo la cheratina utilizzando solventi sostenibili, stabilendo nuovi standard per l'innovazione eco-friendly e garantendo un'impronta ambientale minima",
                 icon: "⚡",
                 bgColor: "bg-gradient-to-br from-secondary-50 to-secondary-100",
                 iconBg: "bg-secondary-100",
                 hoverBg: "hover:bg-secondary-50"
               },
               {
-                title: "Hydrogel Formation",
-                description: "The true innovation lies in keratin's transformation into hydrogel—a versatile product with endless possibilities, from water purification to cosmetic applications, reshaping industries",
+                title: "Formazione dell'Idrogel",
+                description: "La vera innovazione sta nella trasformazione della cheratina in idrogel: un prodotto versatile con infinite possibilità, dalla purificazione dell'acqua alle applicazioni cosmetiche, ridefinendo le industrie",
                 icon: "💡",
                 bgColor: "bg-gradient-to-br from-accent-50 to-accent-100",
                 iconBg: "bg-accent-100",
@@ -397,13 +397,13 @@ export default function Home() {
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-center"
               style={{ color: '#004AAD' }}
             >
-              Sustainability: our mission
+              Sostenibilità: la nostra missione
             </h2>
             <p 
               className="text-xl leading-relaxed text-center"
               style={{ color: '#004AAD' }}
             >
-              Every small action is a step toward great change. In Keralight Solutions, we start by transforming waste into a valuable resource, to inspire and promote sustainable practices for a better future for everyone.
+              Ogni piccola azione è un passo verso un grande cambiamento. In Keralight Solutions, iniziamo trasformando i rifiuti in una risorsa preziosa, per ispirare e promuovere pratiche sostenibili per un futuro migliore per tutti.
             </p>
           </motion.div>
 
@@ -411,7 +411,7 @@ export default function Home() {
             <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center"
               style={{ color: '#004AAD' }}
             >
-              Our sustainability pillars
+              I nostri pilastri di sostenibilità
             </h3>
             
             <div className="grid md:grid-cols-3 gap-8 mb-32">
@@ -422,10 +422,10 @@ export default function Home() {
                 className="bg-white/80 rounded-2xl p-8 shadow-lg"
               >
                 <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
-                  1. Circular economy
+                  1. Economia circolare
                 </h4>
                 <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
-                  Every year, tons of hair end up in landfills. We transform what is considered waste into valuable resources by producing high-quality keratin and hydrogels. Through a circular approach, we give new life to materials that would otherwise be discarded.
+                  Ogni anno, tonnellate di capelli finiscono nelle discariche. Trasformiamo quello che è considerato un rifiuto in risorse preziose producendo cheratina e idrogel di alta qualità. Attraverso un approccio circolare, diamo nuova vita a materiali che altrimenti verrebbero scartati.
                 </p>
               </motion.div>
 
@@ -436,10 +436,10 @@ export default function Home() {
                 className="bg-white/80 rounded-2xl p-8 shadow-lg"
               >
                 <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
-                  2. Environmental impact
+                  2. Impatto ambientale
                 </h4>
                 <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
-                  We reduce pollution and waste through sustainable production processes. Every gram of hair we recover means less waste and fewer emissions, contributing to the fight against climate change.
+                  Riduciamo l'inquinamento e i rifiuti attraverso processi produttivi sostenibili. Ogni grammo di capelli che recuperiamo significa meno rifiuti e meno emissioni, contribuendo alla lotta contro il cambiamento climatico.
                 </p>
               </motion.div>
 
@@ -450,10 +450,10 @@ export default function Home() {
                 className="bg-white/80 rounded-2xl p-8 shadow-lg"
               >
                 <h4 className="text-2xl font-bold mb-4" style={{ color: '#004AAD' }}>
-                  3. Innovation
+                  3. Innovazione
                 </h4>
                 <p className="text-lg leading-relaxed" style={{ color: '#004AAD' }}>
-                  Through advanced technologies, we develop safe and innovative solutions that improve people's quality of life. Our keratin and hydrogels support health and well-being while respecting the planet.
+                  Attraverso tecnologie avanzate, sviluppiamo soluzioni sicure e innovative che migliorano la qualità della vita delle persone. La nostra cheratina e gli idrogel supportano la salute e il benessere nel rispetto del pianeta.
                 </p>
               </motion.div>
             </div>
@@ -660,9 +660,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">Join Our Network</h2>
+            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+              Unisciti alla Nostra Rete
+            </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Are you a hairdresser passionate about sustainability? Or a company eager to collaborate on innovative solutions? Join our mission! Connect with us to become part of our growing network and lead the way in eco-conscious practices. Let's shape the future together!
+              Sei un parrucchiere appassionato di sostenibilità? O un'azienda desiderosa di collaborare a soluzioni innovative? Unisciti alla nostra missione! Connettiti con noi per diventare parte della nostra rete in crescita e guidare la strada nelle pratiche eco-consapevoli. Diamo forma al futuro insieme!
             </p>
           </motion.div>
 
@@ -676,9 +678,9 @@ export default function Home() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-secondary-900 mb-4">Contact Information</h3>
+                  <h3 className="text-2xl font-semibold text-secondary-900 mb-4">Informazioni di Contatto</h3>
                   <p className="text-secondary-600">
-                    Reach out to us for collaboration opportunities or to learn more about our sustainable solutions.
+                    Contattaci per opportunità di collaborazione o per saperne di più sulle nostre soluzioni sostenibili.
                   </p>
                 </div>
                 
@@ -717,7 +719,7 @@ export default function Home() {
               >
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-secondary-700">
-                    Name
+                    Nome
                   </label>
                   <input
                     type="text"
@@ -737,7 +739,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-secondary-700">
-                    Message
+                    Messaggio
                   </label>
                   <textarea
                     id="message"
@@ -749,7 +751,7 @@ export default function Home() {
                   type="submit"
                   className="w-full bg-primary-600 text-white px-6 py-3 rounded-md hover:bg-primary-700 transition-colors duration-200"
                 >
-                  Send Message
+                  Invia Messaggio
                 </button>
               </motion.form>
             </motion.div>
