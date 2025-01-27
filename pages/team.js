@@ -45,12 +45,6 @@ export default function Team() {
                 image: "vittorio.jpeg"
               },
               {
-                name: "Jithin Kumar Palepu",
-                role: "Responsabile Tecnico",
-                linkedin: "#",
-                image: "jithin.jpeg"
-              },
-              {
                 name: "Ester Russo",
                 role: "Responsabile Risorse Umane",
                 linkedin: "#"
