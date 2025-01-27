@@ -163,6 +163,19 @@ export default function Home() {
                   Con la nostra tecnologia innovativa, rivoluzionamo i processi di estrazione sostenibile, 
                   trasformando i capelli di scarto in biomateriali che supportano l'economia circolare
                 </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="mt-8"
+                >
+                  <a
+                    href="#contact"
+                    className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-colors duration-300"
+                  >
+                    Contattaci Ora
+                  </a>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -222,6 +235,19 @@ export default function Home() {
                     promuovendo una bioeconomia circolare e ridefinendo gli standard del settore.
                   </p>
                 </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mt-8 text-center"
+                >
+                  <a
+                    href="#contact"
+                    className="inline-block bg-secondary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary-700 transition-colors duration-300"
+                  >
+                    Scopri di Più
+                  </a>
+                </motion.div>
               </motion.div>
 
               <motion.div
@@ -379,6 +405,19 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <a
+              href="#contact"
+              className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-300"
+            >
+              Collabora con Noi
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -647,6 +686,19 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 text-center"
+            >
+              <a
+                href="#contact"
+                className="inline-block bg-white text-[#004AAD] px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-colors duration-300 shadow-lg"
+              >
+                Unisciti alla Nostra Missione
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
